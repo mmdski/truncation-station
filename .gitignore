@@ -1,0 +1,9 @@
+.gitignore~
+
+*/ltximg/*
+
+*.org~
+*.org#*
+.#*.org
+
+.DS_Store

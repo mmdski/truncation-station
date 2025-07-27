@@ -1,0 +1,89 @@
+#+title: Chapter 1
+#+date:<2025-07-27 Sun 15:14>
+#+startup: latexpreview
+
+* Exercises
+
+** 1. Classification
+
+*** (a) ordinary differential equation, first order, linear and homogeneous, nonconstant coefficient, scalar
+
+*** (b) partial differential equation, second order, linear and inhomogeneous, constant coefficient, scalar
+
+*** (c) partial differential equation, first order, nonlinear, scalar
+
+** 3. Classification
+
+*** (a) ordinary differential equation, second order, nonlinear, scalar
+
+*** (b) partial differential equation, first order, linear and inhomogeneous, constant coefficient, scalar
+
+*** (c) partial differential equation, second order, linear and inhomogeneous, nonconstant coefficient, scalar
+
+** 5. Solution
+
+*** (a) $x(t) = e^{\frac{1}{2}t}$
+
+\begin{equation*}
+\frac{dx}{dt} + tx = 0
+\end{equation*}
+
+\begin{equation*}
+\frac{dx}{dt} + tx = \frac{1}{2}e^{\frac{1}{2}t} + te^{\frac{1}{2}t} \ne 0
+\end{equation*}
+
+$x(t)$ is not a solution.
+
+*** (b) $u(x, t) = t\sin(x)$
+
+\begin{equation*}
+\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = (1 + t)\sin(x)
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial u}{\partial t} = \sin(x)
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial^2u}{\partial x^2} = \frac{\partial}{\partial x}t\cos(x) = -t\sin(x)
+\end{equation*}
+
+
+\begin{equation*}
+\sin(x) + t\sin(x) = (1+t)\sin(x)
+\end{equation*}
+
+$u(x,t)$ is a solution.
+
+*** (c) $w(x, t) = t(1 - x)$
+
+\begin{equation*}
+\frac{\partial w}{\partial t} + w\frac{\partial w}{\partial x} = 0
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial w}{\partial t} + w\frac{\partial w}{\partial x} = (1 - x) + t(1-x)(-t) = (1 - x) - t^2(1-x) \ne 0
+\end{equation*}
+
+$w(x, t)$ is not a solution.
+
+** 7. $u(t) = t\sin(t)$
+
+\begin{equation*}
+\frac{du}{dt} - \frac{1}{t}u = f(t)
+\end{equation*}
+
+
+
+\begin{equation*}
+\frac{du}{dt} - \frac{1}{t}u = \sin(t) + t\cos(t) - \sin(t) = t\cos(t)
+\end{equation*}
+
+\begin{equation*}
+f(t) = t\cos(t)
+\end{equation*}
+
+** 9. $Cu$ for any $C\ne1$
