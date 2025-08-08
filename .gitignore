@@ -1,6 +1,6 @@
 .gitignore~
 
-*/ltximg/*
+org-ltximg_*
 
 *.org~
 *.org#*
