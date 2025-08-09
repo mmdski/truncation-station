@@ -534,3 +534,150 @@ $u=0$ when $\sin(\theta l) = 0$, which occurs when $\theta l = 0, \pm\pi, \pm2\p
 \begin{equation*}
 \theta = \frac{n\pi}{l},\,n=0,\pm1,\pm2,\dots.
 \end{equation*}
+
+* 2.3
+
+** DONE Exercises [4/4]
+
+*** DONE 1.
+CLOSED: [2025-08-08 Fri 07:59]
+
+
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = f(x,t),\,0 < x < l,\,t > 0
+\end{equation*}
+
+$\frac{\partial^2 u}{\partial t^2}$ has units of $\mathrm{\frac{m}{s^2}}$.
+
+Since $c^2=\frac{T}{\rho}$, $\left[T\right]=\mathrm{N}=\mathrm{kg\cdot\frac{m}{s^2}}$, and $\left[\rho\right]=\mathrm{\frac{kg}{m}}$, $[c^2]=\mathrm{\frac{m^2}{s^2}}$. $\frac{\partial^2 u}{\partial x^2}$ has units of $\mathrm{m^{-1}}$. The second term $c^2\frac{\partial^2 u}{\partial x^}$ also has units of $\mathrm{\frac{m}{s^2}}$.
+
+Therefore,
+
+\begin{equation*}
+\left[f\left(x,t\right)\right] = \mathrm{\frac{m}{s^2}}
+\end{equation*}
+
+*** DONE 3.
+CLOSED: [2025-08-08 Fri 17:19]
+
+As discussed in the previous problem, the units of $c^2$ are $\mathrm{\frac{m^2}{s^2}}$.
+
+Therefore,
+
+\begin{equation*}
+\left[c\right] = \mathrm{\frac{m}{s}}.
+\end{equation*}
+
+*** DONE 5.
+CLOSED: [2025-08-08 Fri 17:40]
+
+Homogeneous Neumann conditions for the wave equation for a string are
+
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial x}(0, t) & = 0 \\
+\frac{\partial u}{\partial x}(l, t) & = 0
+\end{align}
+\end{equation*}
+
+The components of the force vector at the ends of the strings are
+
+\begin{equation*}
+\begin{align}
+n_1 & = -T(x,t)\cos(\theta) \\
+n_2 & = -T(x,t)\sin(\theta)
+\end{align}
+\end{equation*}
+
+Where $n_1$ is the force in the x-direction and $n_2$ is the force in the y-direction. Since $\lvert\partial u/\partial x\rvert \ll 1$, $\cos(\theta) \approx 1$ and $\sin(\theta)\approx \frac{\partial u}{\partial x}$. Therefore,
+
+
+\begin{equation*}
+\begin{align}
+n_1 & = -T(x,t) \\
+n_2 & = -T(x,t)\frac{\partial u}{\partial x}
+\end{align}
+\end{equation*}
+
+If one end of the string, say at $x=0$ is free to move in the vertical direction, then $n_2 = 0$. Therefore,
+
+\begin{equation*}
+n_2 = -T(0,t)\frac{\partial u}{\partial x} = 0
+\end{equation*}
+
+and
+
+\begin{equation*}
+\frac{\partial u}{\partial x}(0, t) = 0.
+\end{equation*}
+
+Likewise, for the other end of the string at $x=l$,
+
+\begin{equation*}
+\frac{\partial u}{\partial x}(l, t) = 0.
+\end{equation*}
+
+*** DONE 7.
+CLOSED: [2025-08-08 Fri 20:45]
+
+
+\begin{equation*}
+\begin{align}
+u(x,t) & = f(x-ct) \\
+v(x,t) & = f(x+ct)
+\end{align}
+\end{equation*}
+
+The homogeneous wave equation is
+
+
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial u^2}{\partial x^2} = 0.
+\end{equation*}
+
+Recall the chain rule of differentiation:
+
+\begin{equation*}
+\frac{d}{dx}f(g(x)) = \frac{df}{dg}\frac{dg}{dx}
+\end{equation*}
+
+**** For $u$:
+
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} & = -cf'(x-ct) \\
+\frac{\partial^2 u}{\partial t^2} & = c^2f''(x-ct) \\
+\\
+\frac{\partial u}{\partial x} & = f'(x-ct) \\
+\frac{\partial^2 u}{\partial x^2} & = f''(x-ct)
+\end{align}
+\end{equation*}
+
+Substituting into the wave equation:
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} =
+   c^2f''(x-ct) - c^2f''(x-ct) = 0
+\end{equation*}
+
+**** For $v$:
+
+\begin{equation*}
+\begin{align}
+\frac{\partial v}{\partial t} & = cf'(x + ct) \\
+\frac{\partial^2 v}{\partial t^2} & = c^2f''(x+ct) \\
+\\
+\frac{\partial v}{\partial x} & = f'(x+ct) \\
+\frac{\partial^2 v}{\partial x^2} & = f''(x+ct)
+\end{align}
+\end{equation*}
+
+Substituting into the wave equation:
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = c^2f''(x+ct) - c^2f''(x+ct) = 0
+\end{equation*}
