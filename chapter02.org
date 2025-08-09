@@ -681,3 +681,50 @@ Substituting into the wave equation:
 \begin{equation*}
 \frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = c^2f''(x+ct) - c^2f''(x+ct) = 0
 \end{equation*}
+
+* 2.4
+
+** DONE Exercises [2/2]
+
+*** DONE 1.
+CLOSED: [2025-08-09 Sat 16:42]
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} + c\frac{\partial u}{\partial x} & = 0\,0<x<l,\,t>0, \\
+u(x, 0) & = u_0(x),\,0<x<l, \\
+u(0,t) &= \phi(t),\,t > 0
+\end{align}
+\end{equation*}
+
+For $x - ct > 0$, the solution will be the initial conditions translated by a distance of $x-ct$, $u_0(x - ct)$.
+
+For $x - ct < 0$, the spatial domain the initial condition has "translated away from," the solution will be the translated boundary value condition. At time $T$, with $T > 0$, the value $\phi(T)$ has moved a distance of $x = c(t - T)$. Solving for $T$: $T = \left(t - \frac{x}{c}\right)$. Therefore, the solution at $x - ct < 0$ is equal to $\phi\left(t - \frac{x}{c}\right)$.
+
+\begin{equation*}
+u(x,t) =
+\begin{cases}
+u_0(x - ct), & x-ct > 0, \\
+\phi\left(t - \frac{x}c\right), & x-ct < 0
+\end{cases}
+\end{equation*}
+
+*** DONE 3.
+CLOSED: [2025-08-09 Sat 17:01]
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} + c\frac{\partial u}{\partial x} & = 0,\,-\infty < x < \infty,\,t>0, \\
+u(x,0) & = \phi(x)\,-\infty < x < \infty
+\end{align}
+\end{equation*}
+
+$c > 0$
+
+$\phi(x) = 0$ for all $x \le a$.
+
+For what values of $(x,t)$ is $u(x,t)=0$ guaranteed to hold?
+
+The solution is $\phi(x - ct)$.
+
+$u(x,t) = 0$ is guaranteed to hold for $x - ct \le a$.
