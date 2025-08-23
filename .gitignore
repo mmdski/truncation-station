@@ -6,4 +6,6 @@ org-ltximg_*
 *.org#*
 .#*.org
 
+*.png
+
 .DS_Store
