@@ -1,0 +1,1632 @@
+#+title: Notes on Gockenbach's *Partial Differential Equations*
+#+author: Marian Domanski
+#+date: <2025-07-30 Wed>
+#+language: en
+#+startup: latexpreview
+#+startup: show2levels
+
+* Chapter 1
+
+** Exercises
+
+*** 1. Classification
+
+**** (a) ordinary differential equation, first order, linear and homogeneous, nonconstant coefficient, scalar
+
+**** (b) partial differential equation, second order, linear and inhomogeneous, constant coefficient, scalar
+
+**** (c) partial differential equation, first order, nonlinear, scalar
+
+*** 3. Classification
+
+**** (a) ordinary differential equation, second order, nonlinear, scalar
+
+**** (b) partial differential equation, first order, linear and inhomogeneous, constant coefficient, scalar
+
+**** (c) partial differential equation, second order, linear and inhomogeneous, nonconstant coefficient, scalar
+
+*** 5. Solution
+
+**** (a) $x(t) = e^{\frac{1}{2}t}$
+
+\begin{equation*}
+\frac{dx}{dt} + tx = 0
+\end{equation*}
+
+\begin{equation*}
+\frac{dx}{dt} + tx = \frac{1}{2}e^{\frac{1}{2}t} + te^{\frac{1}{2}t} \ne 0
+\end{equation*}
+
+$x(t)$ is not a solution.
+
+**** (b) $u(x, t) = t\sin(x)$
+
+\begin{equation*}
+\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = (1 + t)\sin(x)
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial u}{\partial t} = \sin(x)
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial^2u}{\partial x^2} = \frac{\partial}{\partial x}t\cos(x) = -t\sin(x)
+\end{equation*}
+
+
+\begin{equation*}
+\sin(x) + t\sin(x) = (1+t)\sin(x)
+\end{equation*}
+
+$u(x,t)$ is a solution.
+
+**** (c) $w(x, t) = t(1 - x)$
+
+\begin{equation*}
+\frac{\partial w}{\partial t} + w\frac{\partial w}{\partial x} = 0
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial w}{\partial t} + w\frac{\partial w}{\partial x} = (1 - x) + t(1-x)(-t) = (1 - x) - t^2(1-x) \ne 0
+\end{equation*}
+
+$w(x, t)$ is not a solution.
+
+*** 7. $u(t) = t\sin(t)$
+
+\begin{equation*}
+\frac{du}{dt} - \frac{1}{t}u = f(t)
+\end{equation*}
+
+
+
+\begin{equation*}
+\frac{du}{dt} - \frac{1}{t}u = \sin(t) + t\cos(t) - \sin(t) = t\cos(t)
+\end{equation*}
+
+\begin{equation*}
+f(t) = t\cos(t)
+\end{equation*}
+
+*** 9. $Cu$ for any $C\ne1$
+
+* Chapter 2
+
+** 2.1
+
+*** Notes
+
+**** In deriving equation (2.4), the fundamental theorem of calculus is
+
+\begin{equation*}
+\int\limits^b_a\frac{df(t)}{dt}dt = f(b) - f(a)
+\end{equation*}
+
+*** Exercises
+
+**** 1.
+
+
+\begin{equation*}
+q(x,t) = -\kappa\frac{\partial u}{\partial x}(x, t)
+\end{equation*}
+
+
+Heat flux, $q$, has units of energy per unit area per unit time. In SI units, this is Joules per square meter per second $\left(J/m^2s\right)$.
+
+\begin{equation*}
+\left[q\right] = \frac{\mathrm{J}}{\mathrm{m^2s}}
+\end{equation*}
+
+Temperature, $u$, is in $K$.
+
+\begin{equation*}
+\left[\frac{\partial u}{\partial x}\right] = \frac{\mathrm{K}}{\mathrm{m}}
+\end{equation*}
+
+Therefore, the thermal conductivity $\kappa$ is in units of Joules seconds per meter per Kelvin, or Watts per meter per Kelvin.
+
+\begin{equation*}
+\left[\kappa\right] = \mathrm{\frac{J}{smK}} = \mathrm{\frac{W}{mK}}
+\end{equation*}
+
+**** 3.
+
+Equation (2.1) is
+
+
+\begin{equation*}
+E_0 + \int\limits^{x + \Delta x}_x A \rho c (u(s, t) - T_0)ds
+\end{equation*}
+
+In the integral,
+  - $A$ has units of meters squared,
+  - $\rho$ has units of kilograms per cubic meter,
+  - $c$ has units of Joules per kilogram per Kelvin,
+  - $u$ and $T$ both have using of Kelvin,
+  - and $ds$ has units of meters.
+
+
+\begin{equation*}
+\left[A\rho c (u(s, t) - T_0) ds\right] = m^2\frac{kg}{m^3}\frac{J}{kg\cdot K} K m = J
+\end{equation*}
+
+**** 5.
+
+\begin{equation*}
+\left[r\right] = \frac{J}{s}
+\end{equation*}
+
+The heat flux $q$ can be related to $r$ by $q(l, t) = -r/A$. The negative sign is due to the negative orientation of the heat source.
+
+Therefore, $q(l,t) = -\kappa\frac{\partial u}{\partial x}(l, t) = -\frac{r}{A}$.
+
+The boundary condition at $x=l$ is then
+
+\begin{equation*}
+\frac{\partial u}{\partial x}(l, t) = \frac{1}{\kappa}\frac{r}{A}
+\end{equation*}
+
+**** 7.
+
+$\kappa = 0.802\,\frac{\mathrm{W}}{\mathrm{cm K}}$
+$l = 1\,\mathrm{m}$
+$r = 1\,\mathrm{cm}$
+Lateral boundary completely insulated -> no loss along the bar
+$u(0,t) = 20^{\circ}\,\mathrm{C}$
+$u(l,t) = 30^{\circ}\,\mathrm{C}$
+
+***** (a)
+
+
+\begin{equation*}
+\begin{aligned}
+-\kappa\frac{d^2u}{dx^2} & = 0,\quad 0 < x < l \\
+u(0) & = 20^{\circ}\,\nomath{C} \\
+u(100) & = 30^{\circ}\,\nomath{C}
+\end{aligned}
+\end{equation*}
+
+From Example 2.2:
+
+
+\begin{equation*}
+u(x) = 20 + \frac{x}{10}
+\end{equation*}
+
+***** (b)
+
+\begin{equation*}
+q(x, t) = -\kappa \frac{\partial u}{\partial x}(x, t)
+\end{equation*}
+
+
+\begin{equation*}
+\frac{\partial u}{\partial x} = \frac{1}{10}
+\end{equation*}
+
+
+\begin{equation*}
+q = -\kappa\frac{\partial u}{\partial x} = -\frac{0.802}{10} = -0.0802\, \frac{\mathrm{W}}{\mathrm{cm}^2}
+\end{equation*}
+
+Heat flux is given by $Aq$.
+
+\begin{equation*}
+Aq = (1\,\mathrm{cm})^2\pi\left(-0.0802\,\frac{\mathrm{W}}{\mathrm{cm^2}}\right) = 0.252\,\mathrm{W}
+\end{equation*}
+
+**** 9.
+
+Newton's law of cooling
+
+\begin{equation*}
+q(x, t) = \alpha\Delta u
+\end{equation*}
+
+where $\alpha$ is a constant of proportionality and $\Delta u = u_{\mathrm{bar}} - u_{\mathrm{medium}}$.
+
+Fourier's law of heat conduction
+
+\begin{equation*}
+q(x, t) = -\kappa \frac{\partial u_{\mathrm{bar}}}{\partial x}(x, t)
+\end{equation*}
+
+\begin{equation*}
+\alpha\Delta u = \alpha u_{\mathrm{bar}} - \alpha u_{\mathrm{medium}} = -\kappa\frac{\partial u}{\partial x}
+\end{equation*}
+
+The boundary condition is
+
+\begin{equation*}
+u_{\mathrm{bar}} + \frac{\kappa}{\alpha}\frac{\partial u_\mathrm{bar}}{\partial x} = u_{\mathrm{medium}}
+\end{equation*}
+
+**** 11
+
+
+\begin{equation*}
+\frac{\partial u}{\partial t} - D\frac{\partial^2 u}{\partial x^2} = f(x, t)
+\end{equation*}
+
+Both ends of the pipe are sealed, so diffusive transport will not occur through the ends of the pipe. Since the rate of diffusion is proportional to the concentration gradient, the concentration gradient is equal to zero.
+
+\begin{equation*}
+\frac{\partial u}{\partial x}(x, t) = 0
+\end{equation*}
+
+for $x = 0$ and $x = l$.
+
+For initial conditions, the concentration must be defined at all points within the pipe at the initial time.
+
+
+\begin{equation*}
+u(x, t_0) = \psi(x), \quad 0 < x < l
+\end{equation*}
+
+The complete IBVP is
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} - D\frac{\partial^2 u}{\partial x^2} & = f(x, t),\quad 0 < x < l,\, t > t_0, \\
+u(x, t_0) & = \psi(x), \quad 0<x<l, \\
+\frac{\partial u}{\partial x}(0, t) & = 0,\quad t > t_0, \\
+\frac{\partial u}{\partial x}(l, t) & = 0,\quad t > t_0.
+\end{align}
+\end{equation*}
+
+**** 13
+
+- $l$ - length of pipe
+- $r$ - radius of pipe
+- $u_0$ - concentration of left reservoir
+- $u_l$ - concentration of right reservoir
+
+$u(0,t) = u_0$ and $u(l,t) = u_l$
+
+***** (a)
+
+The steady state problem is
+
+
+\begin{equation*}
+\begin{align}
+-D\frac{d^2 u}{d x^2} & = 0,\quad 0 < x < l, \\
+u(0) & = u_0, \\
+u(l) & = u_l.
+\end{align}
+\end{equation*}
+
+Integrating once yields
+
+\begin{equation*}
+\frac{d u}{d x} = C_1.
+\end{equation*}
+
+Integrating a second time yields
+
+\begin{equation*}
+u = C_1 x + C_2.
+\end{equation*}
+
+Solving for $u(0) = u_0$,
+
+\begin{equation*}
+u(0) = C_2 = u_0.
+\end{equation*}
+
+Now solving for $u(l) = u_l$:
+
+\begin{equation*}
+\begin{align}
+u(l) & = C_1 l + u_0 = u_l \\
+\Rightarrow C_1 & = \frac{u_l - u_0}{l}
+\end{align}
+\end{equation*}
+
+Therefore
+
+\begin{equation*}
+u(x) = \frac{u_l - u_0}{l}x + u_0.
+\end{equation*}
+
+The rate at which a chemical moves across a cross section is
+
+\begin{equation*}
+-D\frac{\partial u}{\partial t}(x, t),
+\end{equation*}
+
+therefore the rate at which the mass diffuses is
+
+\begin{equation*}
+\begin{aligned}
+-AD\frac{\partial u}{\partial t}(x, t) & = -AD\frac{u_l - u_0}{l} \\
+& = -\pi r^2 D \frac{u_l - u_0}{l}
+\end{aligned}
+\end{equation*}
+
+***** (b)
+
+The rate increases as $r$ increases and decreases as $l$ increases.
+
+** 2.2
+
+*** DONE Exercises [4/4]
+
+**** DONE 1.
+CLOSED: [2025-08-06 Wed 07:42]
+
+The internal force at the end of the bar is
+
+\begin{equation*}
+-Ak(l)\frac{du}{dx}(l).
+\end{equation*}
+
+The force at the end of the bar is equal to
+
+\begin{equation*}
+F = pA,
+\end{equation*}
+
+where $p$ is the applied pressure and $A$ is the area of the end of the bar. Since the bar is not accelerating, the sum of forces is equal to zero.
+
+
+\begin{equation*}
+-Ak(l)\frac{du}{dx}(l) + pA = 0.
+\end{equation*}
+
+Solving for $\frac{du}{dx}(l)$,
+
+
+\begin{equation*}
+\frac{du}{dx}(l) = \frac{p}{k}.
+\end{equation*}
+
+Therefore, the boundary conditions are
+
+\begin{equation*}
+\begin{align}
+u(0) & = 0 \\
+\frac{du}{dx}(l) & = \frac{p}{k(l)}
+\end{align}
+\end{equation*}
+
+**** DONE 3.
+CLOSED: [2025-08-06 Wed 19:58]
+
+$k = 195\,\mathrm{GPa}$
+
+$1\,\mathrm{Pa} = 1\,\mathrm{\frac{N}{m^2}}$
+
+$1\,\mathrm{N} = 1\,\mathrm{kg\cdot\frac{m}{s^2}}$
+
+***** (a)
+
+Internal force at a cross section along the bar is
+
+$F = Ak\frac{du}{dx}$
+
+Dividing by area gives pressure
+
+$p = \frac{F}{A} = k\frac{du}{dx}$
+
+Therefore
+
+
+\begin{equation*}
+k = \frac{p}{\frac{du}{dx}}.
+\end{equation*}
+
+If the bar is length $l$, since $k=195\,\mathrm{GPa}$, it takes $195A\,\mathrm{GN}$ to stretch the bar to $(1+\epsilon)l$, where $\epsilon$ is the fractional increase in the length of the bar.
+
+***** (b)
+
+$k=195\,\mathrm{GPa}$, $p = 1\,\mathrm{GPa}$, $l=1\,\mathrm{m}$, $r=1\,\mathrm{cm}$
+
+\begin{equation*}
+\begin{align}
+p & = k\frac{du}{dx} \\
+\Rightarrow \frac{du}{dx} & = \frac{p}{k} = \frac{1\,\mathrm{GPa}}{195\,\mathrm{GPa}} = 5.13\times10^{-3}
+\end{align}
+\end{equation*}
+
+The length after the equilibrium state is reached:
+
+\begin{equation*}
+(1+\epsilon)l = (1+5.13\times10^{-3})(1\,\mathrm{m}) = 1.005\,\mathrm{m}
+\end{equation*}
+
+The new length is $1.005\,\mathrm{m}$.
+
+***** (c)
+
+The BVP is
+
+
+\begin{equation*}
+\begin{align}
+-k\frac{d^2u}{dx^2} & = 0, \\
+u(0) & = 0, \\
+\frac{du}{dx}(l) & = \frac{p}{k}
+\end{align}
+\end{equation*}
+
+Integrating the differential equation twice yields
+
+
+\begin{equation*}
+u(x) = C_2x + C_1
+\end{equation*}
+
+Using the first boundary condition
+
+$u(0) = C_1 = 0$
+
+Applying the second boundary condition,
+
+$\frac{du}{dx} = C_2 = \frac{p}{k}$
+
+The solution is then
+
+\begin{equation*}
+u = \frac{p}{k}x
+\end{equation*}
+
+Solving for $x=l$,
+
+\begin{equation*}
+u = \frac{1\,\mathrm{GPa}}{195\,\mathrm{GPa}}(1\,\mathrm{m}) = 5.13\times10^{-3}\,\mathrm{m}
+\end{equation*}
+
+The total length after equilibrium is reached is
+
+\begin{equation*}
+l = 1.005\,\mathrm{m}
+\end{equation*}
+
+**** DONE 5.
+CLOSED: [2025-08-07 Thu 08:21]
+
+$\rho = 7.9\,\mathrm{\frac{g}{cm^3}}$
+
+The wave equation, in general, is
+
+
+\begin{equation*}
+\rho\frac{\partial^2 u}{\partial t^2} - \frac{\partial}{\partial x}\left(k(x)\frac{\partial u}{\partial x}\right) = f(x,t)
+\end{equation*}
+
+Since, in this case, $\frac{\partial k}{\partial x} = 0$,
+
+\begin{equation*}
+\rho\frac{\partial^2 u}{\partial t^2} - k\frac{\partial^2 u}{\partial x^2} = f(x,t).
+\end{equation*}
+
+The wave equation will be written in SI units.
+
+From problem 3, $k=195\,\mathrm{GPa}=195\times 10^9\,\mathrm{Pa} = 1.95\times 10^{11}\,\mathrm{Pa}$.
+
+The density is
+
+
+\begin{equation*}
+\begin{align}
+\rho & = 7.9\,\mathrm{\frac{g}{cm^3}} \times \mathrm{\frac{\left(100\,cm\right)^3}{\left(1\,m\right)^3}} \times \mathrm{\frac{1\,kg}{1\times 10^3 g}}\\
+& = 7.9\times 10^3\,\mathrm{\frac{kg}{m^3}}
+\end{align}
+\end{equation*}
+
+The wave equation for the bar is then,
+
+\begin{equation*}
+\left(7.9\times 10^3\,\mathrm{\frac{kg}{m^3}}\right)\frac{\partial^2 u}{\partial t^2} -
+   \left(1.95\times 10^{11} \mathrm{Pa}\right)\frac{\partial^2 u}{\partial x^2} = f(x,t)
+\end{equation*}
+
+$\frac{\partial^2 u}{\partial t^2}$ has units of $\mathrm{\frac{m}{s^2}}$. Therefore, the units of the first term are
+
+\begin{equation*}
+\mathrm{\frac{kg}{m^2}\times\frac{m}{s^2} = \frac{N}{m^3}.
+\end{equation*}
+
+In the second term, $\frac{\partial^2 u}{\partial x^2}$ has units of $\mathrm{\frac{1}{m}}$. Therefore, the units of the second term are
+
+\begin{equation*}
+\mathrm{Pa \times \frac{1}{m} = \frac{N}{m^3}}.
+\end{equation*}
+
+$f(x,t)$ must also have units of Newtons per meter cubed, or Newtons per cubic meter.
+
+\begin{equation*}
+\left[f(x,t)\right] = \mathrm{\frac{N}{m^3}}
+\end{equation*}
+
+**** DONE 7.
+CLOSED: [2025-08-07 Thu 20:08]
+
+***** (a)
+
+Show that
+
+\begin{equation*}
+u(x,t) = \cos(c\theta t)\sin(\theta x)
+\end{equation*}
+
+is a solution to
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = 0,\,0<x<l\quad\text{for all t}.
+\end{equation*}
+
+Finding the partial derivatives of $u$:
+
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} & = -c\theta\sin(c\theta t)\sin(\theta x) \\
+\frac{\partial^2 u}{\partial t^2} & = -c^2\theta^2\cos(c\theta t)\sin(\theta x)
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial x} & = \theta\cos(c\theta t)\cos(\theta x) \\
+\frac{\partial^2 u}{\partial x^2} & = -\theta^2\cos(c\theta t)\sin(\theta x)
+\end{align}
+\end{equation*}
+
+Substituting into the PDE yields
+
+
+\begin{equation*}
+\begin{align}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} =
+-c^2\theta^2\cos(c\theta t)\sin(\theta x) + c^2\theta^2\cos(c\theta t)\sin(\theta x) = 0
+\end{align}
+\end{equation*}
+
+Therefore, $u$ is a solution.
+
+***** (b)
+
+Dirichlet conditions are
+
+\begin{equation*}
+\begin{align}
+u(0, t) & = 0 \\
+u(l, t) & = 0
+\end{align}
+\end{equation*}
+
+for all t.
+
+\begin{equation*}
+u(x,t) = \cos(c\theta t)\sin(\theta x)
+\end{equation*}
+
+For $x=0$,
+
+\begin{equation*}
+u(0,t) = \cos(c\theta t)\sin(\theta 0) = 0
+\end{equation*}
+
+Any value of $\theta$ works here since $\sin(\theta 0) = 0$ for all $\theta$ and all $t$.
+
+For $x = l$,
+
+
+\begin{equation*}
+u(l,t) = \cos(c\theta t)\sin(\theta l) = 0
+\end{equation*}
+
+$u=0$ when $\sin(\theta l) = 0$, which occurs when $\theta l = 0, \pm\pi, \pm2\pi, \dots, \pmn\pi$, so
+
+\begin{equation*}
+\theta = \frac{n\pi}{l},\,n=0,\pm1,\pm2,\dots.
+\end{equation*}
+
+** 2.3
+
+*** DONE Exercises [4/4]
+
+**** DONE 1.
+CLOSED: [2025-08-08 Fri 07:59]
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = f(x,t),\,0 < x < l,\,t > 0
+\end{equation*}
+
+$\frac{\partial^2 u}{\partial t^2}$ has units of $\mathrm{\frac{m}{s^2}}$.
+
+Since $c^2=\frac{T}{\rho}$, $\left[T\right]=\mathrm{N}=\mathrm{kg\cdot\frac{m}{s^2}}$, and $\left[\rho\right]=\mathrm{\frac{kg}{m}}$, $[c^2]=\mathrm{\frac{m^2}{s^2}}$. $\frac{\partial^2 u}{\partial x^2}$ has units of $\mathrm{m^{-1}}$. The second term $c^2\frac{\partial^2 u}{\partial x^}$ also has units of $\mathrm{\frac{m}{s^2}}$.
+
+Therefore,
+
+\begin{equation*}
+\left[f\left(x,t\right)\right] = \mathrm{\frac{m}{s^2}}
+\end{equation*}
+
+**** DONE 3.
+CLOSED: [2025-08-08 Fri 17:19]
+
+As discussed in the previous problem, the units of $c^2$ are $\mathrm{\frac{m^2}{s^2}}$.
+
+Therefore,
+
+\begin{equation*}
+\left[c\right] = \mathrm{\frac{m}{s}}.
+\end{equation*}
+
+**** DONE 5.
+CLOSED: [2025-08-08 Fri 17:40]
+
+Homogeneous Neumann conditions for the wave equation for a string are
+
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial x}(0, t) & = 0 \\
+\frac{\partial u}{\partial x}(l, t) & = 0
+\end{align}
+\end{equation*}
+
+The components of the force vector at the ends of the strings are
+
+\begin{equation*}
+\begin{align}
+n_1 & = -T(x,t)\cos(\theta) \\
+n_2 & = -T(x,t)\sin(\theta)
+\end{align}
+\end{equation*}
+
+Where $n_1$ is the force in the x-direction and $n_2$ is the force in the y-direction. Since $\lvert\partial u/\partial x\rvert \ll 1$, $\cos(\theta) \approx 1$ and $\sin(\theta)\approx \frac{\partial u}{\partial x}$. Therefore,
+
+
+\begin{equation*}
+\begin{align}
+n_1 & = -T(x,t) \\
+n_2 & = -T(x,t)\frac{\partial u}{\partial x}
+\end{align}
+\end{equation*}
+
+If one end of the string, say at $x=0$ is free to move in the vertical direction, then $n_2 = 0$. Therefore,
+
+\begin{equation*}
+n_2 = -T(0,t)\frac{\partial u}{\partial x} = 0
+\end{equation*}
+
+and
+
+\begin{equation*}
+\frac{\partial u}{\partial x}(0, t) = 0.
+\end{equation*}
+
+Likewise, for the other end of the string at $x=l$,
+
+\begin{equation*}
+\frac{\partial u}{\partial x}(l, t) = 0.
+\end{equation*}
+
+**** DONE 7.
+CLOSED: [2025-08-08 Fri 20:45]
+
+
+\begin{equation*}
+\begin{align}
+u(x,t) & = f(x-ct) \\
+v(x,t) & = f(x+ct)
+\end{align}
+\end{equation*}
+
+The homogeneous wave equation is
+
+
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial u^2}{\partial x^2} = 0.
+\end{equation*}
+
+Recall the chain rule of differentiation:
+
+\begin{equation*}
+\frac{d}{dx}f(g(x)) = \frac{df}{dg}\frac{dg}{dx}
+\end{equation*}
+
+***** For $u$:
+
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} & = -cf'(x-ct) \\
+\frac{\partial^2 u}{\partial t^2} & = c^2f''(x-ct) \\
+\\
+\frac{\partial u}{\partial x} & = f'(x-ct) \\
+\frac{\partial^2 u}{\partial x^2} & = f''(x-ct)
+\end{align}
+\end{equation*}
+
+Substituting into the wave equation:
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} =
+   c^2f''(x-ct) - c^2f''(x-ct) = 0
+\end{equation*}
+
+***** For $v$:
+
+\begin{equation*}
+\begin{align}
+\frac{\partial v}{\partial t} & = cf'(x + ct) \\
+\frac{\partial^2 v}{\partial t^2} & = c^2f''(x+ct) \\
+\\
+\frac{\partial v}{\partial x} & = f'(x+ct) \\
+\frac{\partial^2 v}{\partial x^2} & = f''(x+ct)
+\end{align}
+\end{equation*}
+
+Substituting into the wave equation:
+
+\begin{equation*}
+\frac{\partial^2 u}{\partial t^2} - c^2\frac{\partial^2 u}{\partial x^2} = c^2f''(x+ct) - c^2f''(x+ct) = 0
+\end{equation*}
+
+** 2.4
+
+*** DONE Exercises [2/2]
+
+**** DONE 1.
+CLOSED: [2025-08-09 Sat 16:42]
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} + c\frac{\partial u}{\partial x} & = 0\,0<x<l,\,t>0, \\
+u(x, 0) & = u_0(x),\,0<x<l, \\
+u(0,t) &= \phi(t),\,t > 0
+\end{align}
+\end{equation*}
+
+For $x - ct > 0$, the solution will be the initial conditions translated by a distance of $x-ct$, $u_0(x - ct)$.
+
+For $x - ct < 0$, the spatial domain the initial condition has "translated away from," the solution will be the translated boundary value condition. At time $T$, with $T > 0$, the value $\phi(T)$ has moved a distance of $x = c(t - T)$. Solving for $T$: $T = \left(t - \frac{x}{c}\right)$. Therefore, the solution at $x - ct < 0$ is equal to $\phi\left(t - \frac{x}{c}\right)$.
+
+\begin{equation*}
+u(x,t) =
+\begin{cases}
+u_0(x - ct), & x-ct > 0, \\
+\phi\left(t - \frac{x}c\right), & x-ct < 0
+\end{cases}
+\end{equation*}
+
+**** DONE 3.
+CLOSED: [2025-08-09 Sat 17:01]
+
+\begin{equation*}
+\begin{align}
+\frac{\partial u}{\partial t} + c\frac{\partial u}{\partial x} & = 0,\,-\infty < x < \infty,\,t>0, \\
+u(x,0) & = \phi(x)\,-\infty < x < \infty
+\end{align}
+\end{equation*}
+
+$c > 0$
+
+$\phi(x) = 0$ for all $x \le a$.
+
+For what values of $(x,t)$ is $u(x,t)=0$ guaranteed to hold?
+
+The solution is $\phi(x - ct)$.
+
+$u(x,t) = 0$ is guaranteed to hold for $x - ct \le a$.
+
+* Chapter 3
+
+** DONE 3.1 [7/7]
+*** DONE 1.
+CLOSED: [2025-08-11 Mon 07:36]
+
+
+\begin{equation*}
+f(x) = ax + b
+\end{equation*}
+
+Definition 3.9 states
+
+Suppose $X$ and $Y$ are vector spaces
+
+$f:X \to Y$
+
+$f$ *linear* if and only if
+
+
+\begin{equation*}
+f(\alpha\mathbf{x} + \beta\mathbf{z}) = \alpha f(\mathbf{x}) + \beta f(\mathbf{z})
+\end{equation*}
+
+for all $\alpha, \beta \in \mathbf{R}$, $\mathbf{x}, \mathbf{z} \in X$.
+
+\begin{equation*}
+\begin{align}
+f(\alpha x + \beta z) & = a(\alpha x + \beta z) + b \\
+& = \alpha a x + \beta a z + b \\
+& \ne f(\alpha x) + f(\alpha z)
+\end{align}
+\end{equation*}
+
+By Definition 3.9, $f$ is *not* linear.
+
+The form of a linear function $f : \mathbf{R} \to \mathbf{R}$ is $f(x) = ax$.
+
+\begin{equation*}
+\begin{align}
+f(\alpha x + \beta z) & = a(\alpha x + \beta z) \\
+& = \alpha a x + \beta a z \\
+& = \alpha f(x) + \beta f(z)
+\end{align}
+\end{equation*}
+
+*** DONE 3.
+CLOSED: [2025-08-11 Mon 19:30]
+
+
+\begin{equation*}
+f(\mathbf{x}) = \begin{bmatrix}
+x_1^2 + x_2^2 \\
+x_2 - x_1^2
+\end{bmatrix}
+\end{equation*}
+
+Prove that $f$ is not linear.
+
+\begin{equation*}
+f(\alpha\mathbf{x}) = \begin{bmatrix}
+    \alpha^2 x_1^2 + \alpha^2 x_2^2 \\
+    \alpha x_2 - \alpha^2 x_1^2
+\end{bmatrix}
+\end{equation*}
+
+
+\begin{equation*}
+\alpha f(\mathbf{x}) = \begin{bmatrix}
+    \alpha x_1^2 + \alpha x_2^2 \\
+    \alpha x_2 - \alpha x_1^2
+\end{bmatrix}
+\end{equation*}
+
+$f(\alpha \mathbf{x}) \ne \alpha f(\mathbf{x})$
+
+$f(\mathbf{x})$ is not linear.
+
+*** DONE 5.
+CLOSED: [2025-08-12 Tue 18:04]
+
+**** (a) $\lbrace f \in C[0,1] : f(0) = 0 \rbrace$
+
+Let $W = \lbrace f \in C[0,1] : f(0) = 0 \rbrace$.
+
+- The zero function is in $W$.
+
+- Let $f,g\in W$, $w = \alpha f + \beta g \in W$ since a continuous function added to a continuous function is a continuous function.
+
+- $w(0) = \alpha f(0) + \beta g(0) = 0$.
+
+*$W$ is a vector space (subspace).*
+
+**** (b) $W = \lbrace f \in C[0,1] : f(0) = 1\rbrace$
+
+- The zero function is not in $W$.
+
+*$W$ is not a vector space.*
+
+**** (c) $W = \lbrace f \in C[0,1] : \int_0^1 f(x)dx = 0 \rbrace$
+
+- The zero function is in $W$.
+
+- Let $f,g\in W$, $\alpha,\beta \in \mathbf{R}$, and $w = \alpha f + \beta g$.
+
+  \begin{equation*}
+  \begin{align}
+  \int^1_0 w(x) & = \int^1_0 \left[\alpha f(x) + \beta g(x)\right] dx \\
+  & = \alpha \int^1_0 f(x) dx + \beta g(x) dx \\
+  & = \alpha 0 + \beta 0 \\
+  & = 0
+  \end{align}
+  \end{equation*}
+
+  Therefore, $w \in W$.
+
+*$W$ is a vector space.*
+
+**** (d) $\mathcal{P}_n$, the set of all polynomials of degree n or less.
+
+- The zero polynomial is in $\mathcal{P}_n$.
+
+- $r = \alpha p + \beta q$, $r$ is in $\mathcal{P}_n$.
+
+*$\mathcal{P}_n$ is a vector space.*
+
+**** (e) The set of all polynomials of degree exactly $n$.
+
+The zero polynomial isn't in the set.
+
+The set is not a vector space.
+
+*** DONE 7.
+CLOSED: [2025-08-12 Tue 18:23]
+
+
+\begin{equation*}
+Lu = \frac{du}{dx} + u^3
+\end{equation*}
+
+\begin{equation*}
+L(\alpha u + \beta v) = \frac{d}{dx}(\alpha u + \beta v) + (\alpha u + \beta v)^3
+\end{equation*}
+
+
+\begin{equation*}
+\begin{align}
+(\alpha u + \beta v)^3 & = (\alpha^2u^2 + 2\alpha\beta u v + \beta^2v^2)(\alpha u + \beta v) \\
+& = \alpha^3 u^3
+    + 3\alpha^2\beta u^2 v + 3\alpha\beta^2 u v^2
+    + \beta^3 v^3
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+\alpha L(u) + \beta L(v) = \alpha\frac{du}{dx} + \alpha u^3
+    + \beta\frac{dv}{dx} + \beta v^3
+\end{align}
+\end{equation*}
+
+
+\begin{equation*}
+L(\alpha u + \beta v) \ne \alpha L(u) + \beta L(v)
+\end{equation*}
+
+$L$ is not linear.
+
+*** DONE 9.
+CLOSED: [2025-08-13 Wed 21:18]
+
+
+
+\begin{equation*}
+Ku : C^2[a,b] \to C[a,b]
+\end{equation*}
+
+
+\begin{equation*}
+Ku = x^2\frac{d^2 u}{dx^2} - 2x\frac{du}{dx} + 3u
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+K\alpha u & = x^2\frac{d^2 \alpha u}{dx^2} - 2x\frac{d \alpha u}{dx} + 3(\alpha u) \\
+& = \alpha x^2\frac{d^2 u}{dx^2} - \alpha\left(2x\frac{du}{dx}\right) + \alpha(3u) \\
+& = \alpha \left(x^2\frac{d^2x}{dx^2} - 2\frac{du}{dx} + 3u\right) \\
+& = \alpha Ku
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+K(u + v) & = x^2\frac{d^2}{dx^2}(u + v) - 2x\frac{d}{dx}(u+v) + 3(u+v) \\
+& = x^2\frac{d^2 u}{dx^2} - 2x\frac{du}{dx} + 3u + x^2\frac{d^2 v}{dx^2} - 2x\frac{dv}{dx} + 3v \\
+& = Ku + Kv
+\end{align}
+\end{equation*}
+
+$K$ is linear.
+
+*** DONE 11.
+CLOSED: [2025-08-13 Wed 21:41]
+
+Let $\rho$, $c$, and $\kappa$ be constants, and $L : C^2(\mathbf{R}^2) \to C(\mathbf{R^2})$.
+
+
+\begin{equation*}
+Lu = \rho c \frac{\partial u}{\partial t} - \kappa \frac{\partial ^2 u}{\partial x^2}
+\end{equation*}
+
+Prove that $L$ is a linear operator.
+
+\begin{equation*}
+\begin{align}
+L\alpha u & = \rho c \frac{\partial\alpha u}{\partial t} - \kappa\frac{\partial^2\alpha u}{\partial x^2} \\
+& = \alpha\left(\rho c\frac{\partial^2 u}{\partial t} - \kappa\frac{\partial^2 u}{\partial x^2}\right) \\
+& = \alpha Lu
+\end{align}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{align}
+L(u + v) & = \rho c\frac{\partial}{\partial t}(u + v) - \kappa\frac{\partial^2}{\partial x^2}(u + v) \\
+& = \rho c \frac{\partial u}{\partial t} - \kappa \frac{\partial^2 u}{\partial x^2} + \rho c \frac{\partial v}{\partial t} - \kappa \frac{\partial^2 v}{\partial x^2}
+& = Lu + Lv
+\end{align}
+\end{equation*}
+
+$L$ is linear.
+
+*** DONE 13.
+CLOSED: [2025-08-14 Thu 19:27]
+
+**** (a)
+
+Let $\mathbf{A} \in \mathbf{R}^{2\times 2}$. Prove that
+
+
+\begin{equation*}
+\mathbf{A}(\alpha\mathbf{x} + \beta\mathbf{y}) = \alpha\mathbf{Ax} + \beta\mathbf{Ay}
+\end{equation*}
+
+for all $\alpha,\beta\,\in\mathbf{R}$, $\mathbf{x},\mathbf{y}\in\mathbf{R}^2$.
+
+Let
+
+\begin{equation*}
+\mathbf{A} = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}, \:
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \:
+\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}.
+\end{equation*}
+
+
+
+\begin{equation*}
+\begin{align}
+\mathbf{A}(\alpha\mathbf{x} + \beta\mathbf{y}) & =
+\begin{bmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{bmatrix}\begin{bmatrix}\alpha x_1 + \beta y_1 \\ \alpha x_2 + \beta y_2\end{bmatrix} \\
+& = \begin{bmatrix}
+a_{11}(\alpha x_1 + \beta y_1) + a_{12}(\alpha x_2 + \beta y_2) \\
+a_{21}(\alpha x_1 + \beta y_1) + a_{22}(\alpha x_2 + \beta y_2)
+\end{bmatrix} \\
+& = \begin{bmatrix}
+\alpha a_{11}x_1 + \alpha a_{12}x_2 + \beta a_{11}y_1 + \beta a_{12}y_2 \\
+\alpha a_{21}x_1 + \alpha a_{22}x_2 + \beta a_{21}y_1 + \beta a_{22}y_2
+\end{bmatrix} \\
+& = \alpha\begin{bmatrix}
+a_{11}x_1 + a_{12}x_2 \\
+a_{21}x_1 + a_{22}x_2
+\end{bmatrix} + \beta\begin{bmatrix}
+a_{11}y_1 + a_{12}y_2 \\
+a_{21}y_1 + a_{22}y_2
+\end{bmatrix} \\
+& = \alpha\mathbf{A}\mathbf{x} + \beta\mathbf{A}\mathbf{y}
+\end{align}
+\end{equation*}
+
+$\therefore$
+
+\begin{equation*}
+\mathbf{A}(\alpha\mathbf{x} + \beta\mathbf{y}) = \alpha\mathbf{A}\mathbf{x} + \beta\mathbf{A}\mathbf{y}
+\end{equation*}
+
+**** (b)
+
+Now repeat part 13(a) for $\mathbf{A}\in\mathbf{R}^{n\times n}$.
+
+\begin{equation*}
+(\mathbf{A}\mathbf{x})_i=\sum^n_{j=1} a_{ij}x_j
+\end{equation*}
+
+ \begin{equation*}
+\begin{align}
+(\mathbf{A}(\alpha\mathbf{x} + \beta\mathbf{y}))_i & = \sum_{j=1}^na_{ij}(\alpha x_j + \beta y_j) \\
+& = \sum_{j=1}^n\alpha a_{ij}x_j + \beta a_{ij}y_j \\
+& = \alpha\sum_{j=1}^n a_{ij}x_j + \beta\sum_{j=1}^n a_{ij}y_j \\
+& = (\alpha\mathbf{A}\mathbf{x})_i + (\beta\mathbf{A}\mathbf{y})_i
+\end{align}
+\end{equation*}
+
+** DONE 3.2 [6/6]
+*** DONE 1.
+CLOSED: [2025-08-17 Sun 17:15]
+
+\begin{equation*}
+\mathbf{A} =
+\begin{bmatrix}
+1 & 2 \\
+-1 & -2
+\end{bmatrix}
+\end{equation*}
+
+Graph $\mathcal{R}(\mathbf{A})$ in the plane.
+
+
+
+\begin{equation*}
+\mathbf{Ax} = \mathbf{b}
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+x_1 + 2x_2 & = b_1 \\
+0 & = b_2 + b_1
+\end{align}
+\end{equation*}
+
+For consistency, $b_2 = -b_1$
+
+\begin{equation*}
+x_1 = b_1 - 2x_2\\
+\end{equation*}
+
+Set $s = x_2$
+
+\begin{equation*}
+\mathbf{x} = \begin{bmatrix} b_1 \\ 0 \end{bmatrix} +
+s \begin{bmatrix} -2 \\ 1 \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{N}(\mathbf{A}) = \begin{Bmatrix} s \begin{bmatrix} -2 \\ 1 \end{bmatrix} : s \in \mathbf{R} \end{Bmatrix}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{R}(\mathbf{A}) = \begin{Bmatrix} \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} \in \mathbf{R}^2 : b_2 = -b_1 \end{Bmatrix}
+\end{equation*}
+
+#+begin_src gnuplot :file range.png :term png
+  set title "Range of A"
+  set xlabel "b1"
+  set ylabel "b2"
+  set zeroaxis
+  set grid
+  plot -x title "b2 = 2 b1" lw 2 lc rgb "blue"
+#+end_src
+
+#+RESULTS:
+[[file:range.png]]
+
+*** DONE 3.
+CLOSED: [2025-08-17 Sun 21:08]
+
+Determine if $\mathbf{Ax} = \mathbf{b}$ has a unique solution for each $\mathbf{b}$ (e.g. $\mathbf{A}$ is nonsingular).
+
+**** (a)
+
+\begin{equation*}
+\mathbf{A} = \begin{bmatrix} 1 & -1 \\ -2 & 4 \end{bmatrix}
+\end{equation*}
+
+II - (-2) I
+
+\begin{equation*} \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix} \end{equation*}
+
+$\mathbf{A}$ is nonsingular.
+
+**** (b)
+
+
+\begin{equation*}
+\mathbf{A} = \begin{bmatrix}1 & 2 \\ 3 & 4 \end{bmatrix}
+\end{equation*}
+
+II - 3I
+
+
+\begin{equation*}
+\begin{bmatrix}1 & 2 \\ 0 & -2\end{bmatrix}
+\end{equation*}
+
+$\mathbf{A}$ is nonsingular.
+
+**** (c)
+
+\\begin{equation*}
+\mathbf{A} = \begin{bmatrix}1 & 1 \\ 1 & 1\end{bmatrix}
+\end{equation*}
+
+$\mathbf{A}$ is singular.
+
+
+\begin{equation*}
+\begin{align}
+x_1 & = b_1 - x_2\\
+0 & = b_2 - b_1
+\end{align}
+\end{equation*}
+
+Solutions only exist when
+
+
+\begin{equation*}
+b_2 = b_1
+\end{equation*}
+
+So, when
+
+
+\begin{equation*}
+\begin{align}
+\mathbf{x} & = \begin{bmatrix}1/2 \\ 1/2\end{bmatrix}, \\
+\mathbf{b} & = \begin{bmatrix}1 \\ 1 \end{bmatrix}.
+\end{align}
+\end{equation*}
+
+However, there is no solution $\mathbf{x}$ for
+
+\begin{equation*}
+\mathbf{b} = \begin{bmatrix}1 \\ 2\end{bmatrix}.
+\end{equation*}
+
+*** DONE 5.
+CLOSED: [2025-08-19 Tue 07:31]
+
+$\mathbf{A} \in \mathbf{R}^{n\times n}$
+
+$\mathbf{b} \in \mathbf{R}^n,\,\mathbf{b}\ne 0$
+
+Is the solution set of the equation $\mathbf{Ax} = \mathbf{b}$,
+
+
+\begin{equation*}
+\lbrace\mathbf{x}\in\mathbf{R}^n : \mathbf{Ax}=\mathbf{b}\rbrace,
+\end{equation*}
+
+a subspace of $\mathbf{R}^n$?
+
+- Is $0$ in the solution set?
+  If $\mathbf{Ax} = 0$, then $\mathbf{x} \in \mathcal{N}(\mathbf{A})$. The solution set excludes $\mathbf{x}$ for $\mathbf{b} = 0$.
+  $\mathbf{x}=0$ is not in the solution set.
+
+*The solution set is not a subspace of $\mathbf{R}^n$.*
+
+*** DONE 7.
+CLOSED: [2025-08-19 Tue 18:46]
+
+\begin{equation*}
+L : C^2[a,b]\to C[a,b]
+\end{equation*}
+
+
+\begin{equation*}
+Lu = \frac{d^2u}{dx^2}
+\end{equation*}
+
+The null space of $L$, $\mathcal{N}(L)$, is the set of first-degree polynomials.
+
+*** DONE 9.
+CLOSED: [2025-08-19 Tue 19:53]
+
+Define the set
+
+
+\begin{equation*}
+C^2_{\tilde{m}}[a,b] = \left\lbrace u\in C^2[a,b] : \frac{du}{dx}(a) = u(b) = 0  \right\rbrace
+\end{equation*}
+
+and $L_{\tilde{m}} : C^2_{\tilde{m}}[a,b] \to C[a,b]$, $L_{\tilde{m}} = -\frac{d^2u}{dx^2}$.
+
+**** (a)
+
+Determine the null space of $L_{\tilde{m}}$
+
+\begin{equation*}
+\begin{align}
+\frac{d^2u}{dx^2} & = 0,\: a < x < b, \\
+\frac{du}{dx}(a) & = 0, \\
+u(b) & = 0
+\end{align}
+\end{equation*}
+
+Because of the operator,   $u(x) = C_1x + C_2$
+
+\begin{equation*}
+\begin{align}
+& \frac{du}{dx}(a) = C_1 = 0 \\
+& \Rightarrow C_1 = 0
+\end{align}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{align}
+& u(b) = C_2 = 0 \\
+& \Rightarrow C_2 = 0
+\end{align}
+\end{equation*}
+
+$\therefore$
+
+\begin{equation*}
+u = 0
+\end{equation*}
+
+$\mathcal{N}(L_{\tilde{m}})$ is trivial.
+
+**** (b)
+
+$f$ is a given function in $C[a,b]$.
+
+To solve $L_{\tilde{m}}u = f$ for $u$,
+
+
+\begin{equation*}
+\begin{align}
+-\frac{d^2u}{dx^2} & = f(x),\:a<x<b \\
+\frac{du}{dx}(a) & = 0, \\
+u(b) & = 0
+\end{align}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{align}
+\frac{d^2u}{dx^2}(x) & = -f(x) \\
+\frac{du}{dx}(x) & = -\int\limits_a^xf(s)ds + C_1 \\
+u(x) & = -\int\limits_a^x\int\limits_a^z f(s)dsdz + C_1x + C_2
+\end{align}
+\end{equation*}
+
+The first boundary condition, $\frac{du}{dx}(a) = 0$:
+
+\begin{equation*}
+\begin{align}
+\frac{du}{dx}(a) & = -\int\limits_a^a f(s)ds + C_1 = 0 \\
+\int\limits_a^a f(s)ds & = 0 \\
+& \Rightarrow C_1 = 0
+\end{align}
+\end{equation*}
+
+The second boundary condition, $u(b) = 0$:
+
+
+\begin{equation*}
+\begin{align}
+u(b) & = -\int\limits_a^b\int\limits_a^z f(s)dsdz + C_2 = 0 \\
+& \Rightarrow C_2 = \int\limits_a^b\int\limits_a^z f(s)dsdz
+\end{align}
+\end{equation*}
+
+$\therefore$
+
+
+\begin{equation*}\begin{align}
+u(x) & = -\int\limits_a^x\int\limits_a^z f(s)dsdz + \int\limits_a^b\int\limits_a^z f(s)dsdz \\
+& = \int\limits_a^b\int\limits_a^z f(s)dsdz -\int\limits_a^x\int\limits_a^z f(s)dsdz \\
+& = \int\limits_x^b\int\limits_a^z f(s)dsdz
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+u(x) = \int\limits_x^b\int\limits_a^z f(s)dsdz
+\end{equation*}
+
+*** DONE 11.
+CLOSED: [2025-08-19 Tue 20:04]
+
+$D : C^1[a,b] \to C[a,b]$
+
+\begin{equation*}
+Df = \frac{df}{dx}
+\end{equation*}
+
+**** (a)
+
+Show that the range of $D$ is all of $C[a,b]$.
+
+
+\begin{equation*}
+u(x) = \int_a^x f(s)ds
+\end{equation*}
+
+**** (b)
+
+The solution is not unique. e.g.
+
+\begin{equation*}
+u(x) = \int_a^x f(s)ds + C
+\end{equation*}
+
+** DONE 3.3 [5/5]
+*** DONE 1.
+CLOSED: [2025-08-21 Thu 21:28]
+**** (a)
+
+\begin{equation*}
+\mathbf{A} = \begin{bmatrix}\begin{array}{r r r}
+3 & -1 & 2 \\ -1 & 3 & 4 \\ 2 & 0 & -3\end{array}\end{bmatrix},\:
+\mathbf{x} = \begin{bmatrix}\begin{array}{r}
+2 \\ -2 \\ 3
+\end{array}\end{bmatrix}
+\end{equation*}
+
+
+\begin{equation*}\begin{align}
+\mathbf{Ax} & = \begin{bmatrix}\begin{array}{r r r}
+2(3) + (-2)(-1) + 3(2) \\
+2(-1) + (-2)(3) + 3(4) \\
+2(2) + -2(0) + 3(-3)
+\end{array}\end{bmatrix} \\
+& = \begin{bmatrix}\begin{array}{r r r}
+6 + 2 + 6 \\
+-2 + -6 + 12 \\
+4 + 0 + -9
+\end{array}\end{bmatrix} \\
+& = \begin{bmatrix}\begin{array}{r r r}
+14 \\
+4 \\
+-5
+\end{array}\end{bmatrix}
+\end{align}\end{equation*}
+
+\begin{equation*}\begin{align}
+2\begin{bmatrix}\begin{array}{r}3 \\ -1 \\ 2\end{array}\end{bmatrix} -
+2\begin{bmatrix}\begin{array}{r}-1 \\ 3 \\ 0\end{array}\end{bmatrix} +
+3\begin{bmatrix}\begin{array}{r}2 \\ 4 \\ -3\end{array}\end{bmatrix} & =
+\begin{bmatrix}\begin{array}{r}6 \\ -2 \\ 4\end{array}\end{bmatrix} +
+\begin{bmatrix}\begin{array}{r}2 \\ -6 \\ 0\end{array}\end{bmatrix} +
+\begin{bmatrix}\begin{array}{r}6 \\ 12 \\ -9\end{array}\end{bmatrix} \\
+& = \begin{bmatrix}\begin{array}{r}14 \\ 4 \\ -5\end{array}\end{bmatrix}
+\end{align}\end{equation*}
+**** (b)
+
+$\mathbf{A} \in \mathbf{R}^{n\times n}$ and $\mathbf{x}\in\mathbf{R}^n$. The columns of $\mathbf{A}$ are vectors $\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\in \mathbf{R}^n$ so that the $(i,j)$-entry of $\mathbf{A}$ is $(\mathbf{v}_j)_i$.
+
+***** $(\mathbf{Ax})_i$
+
+\begin{equation*}
+(\mathbf{Ax})_i = \sum\limits_{j=1}^n x_j(\mathbf{v}_j)_i
+\end{equation*}
+
+***** $(x_1\mathbf{v}_1 + x_2\mathbf{v}_2+\dots+x_n\mathbf{v}_n)$
+
+\begin{equation*}
+(x_1\mathbf{x}_1 + x_2\mathbf{v}_2 + \dots + x_n\mathbf{v}_n) = \sum\limits_{j=1}^n x_j(\mathbf{v}_j)_i
+\end{equation*}
+
+*** DONE 3.
+CLOSED: [2025-08-23 Sat 09:15]
+Is
+
+\begin{equation*}
+\left\lbrace \begin{bmatrix}1 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix}1 \\ 1 \\ 1\end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 1\end{bmatrix} \right\rbrace
+\end{equation*}
+
+a basis for $\mathbf{R}^3$?
+
+No. The first and third rows that make up the matrix of the three vectors are the same.
+
+*** DONE 5.
+CLOSED: [2025-08-23 Sat 09:46]
+
+Typo in problem statement. The polynomials are independent. (See solution.pdf.)
+
+
+\begin{equation*}
+\lbrace 1 - x + 2x^2, 1 - 2x^2, 1 - 3x + 7x^2\rbrace
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+c_1(1-x+2x^2) c_2(1-x2^2) + c_3(1-3x+7x^2) = 0 \\
+(c_1 + c_2 + c_3) + (-c_1 - 3c_3)x + (2c_1 - 2c_2 + 7c_3)x^2 = 0\\
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+\begin{align}
+c_1 + c_2 + c_2 & = 0 \\
+-c_1 - 3c_3 & = 0 \\
+2c_1 - 2c_2 + 7c_3 & = 0
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+\mathbf{Ac} = 0
+\end{equation*}
+
+\begin{equation*}\mathbf{A} =
+\begin{bmatrix}\begin{array}{r r r}
+1 & 1 & 1 \\
+-1 & 0 & -3 \\
+2 & -2 & 7
+\end{array}\end{bmatrix}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{bmatrix}\begin{array}{r r r}
+1 & 1 & 1 \\ -1 & 0 & -3 \\ 2 & -2 & 7
+\end{array}\end{bmatrix}\rightarrow
+\begin{bmatrix}\begin{array}{r r r}
+1 & 1 & 1 \\ 0 & 1 & -2 \\ 0 & -4 & 5
+\end{array}\end{bmatrix}\rightarrow
+\begin{bmatrix}\begin{array}{r r r}
+1 & 1 & 1 \\ 0 & 1 & -2 \\ 0 & 0 & -3
+\end{array}\end{bmatrix}
+\end{equation*}
+
+The row echelon form shows the system is non-singular and so it has only the trivial solution. The polynomials are independent.
+*** DONE 7.
+CLOSED: [2025-08-23 Sat 16:58]
+
+Note: solution set gives a much better answer.
+
+Show that $\lbrace L_1, L_2, L_3 \rbrace$ is a basis for $\mathcal{P}_2$
+
+
+\begin{equation*}
+\begin{align}
+L_1(x) &= 2\left(x - \frac{1}{2}\right)(x-1) \\
+L_2(x) &= -4x(x-1) \\
+L_3(x) &= 2x\left(x-\frac{1}{2}\right)
+\end{align}
+\end{equation*}
+
+For $x_1 = 0,\:x_2 = 1/2,\:x_3 = 1$,
+
+\begin{equation*}
+L_i(x_j) = \begin{cases} 1, & i = j \\ 0, & i \ne j.
+\end{cases}
+\end{equation*}
+
+Let
+
+\begin{equation*}
+p(x) = p(x_1)L_1(x) + p(x_2)L_2(x) + p(x_3)L_3(x)
+\end{equation*}
+
+and $p(x) = c_1 + c_2x + c_3x^2$.
+
+Therefore,
+
+\begin{equation*}
+\begin{align}
+p(x_1) & = c_1, \\
+p(x_2) & = c_1 + \frac{1}{2}c_2 + \frac{1}{4}c_3, \\
+p(x_3) & = c_1 + c_2 + c_3.
+\end{align}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{l r r r r r r r}
+p(x_1)L_1(x)  = & c_1 & - 3c_1x & + 2c_1x^2 & \\
+p(x_2)L_2(x)  = & & 4c_1x & - 4c_1x^2 & + 2c_2x & - 2c_2x^2 & + c_3x & - c_3x^2 \\
+p(x_3)L_3(x)  = & & -c_1x & + 2c_1x^2 & - c_2x & + 2c_2x^2 & - c_3x & + 2c_3x^2
+\end{array}
+\end{equation*}
+
+Adding the above equations gives
+
+\begin{equation*}
+p(x_1)L_1(x) + p(x_2)L_2(x) + p(x_3)L_3(x) = c_1 + c_2x + c_3x^2
+\end{equation*}.
+
+$p(x)$ holds for every $p \in \mathcal{P}_2$. Therefore ${L_1, L_2, L_3}$ is the basis for $\mathcal{P}_2$.
+
+*** DONE 9.
+CLOSED: [2025-08-23 Sat 17:14]
+
+Note: I think the solution in the manual is for problem 10.
+
+Let
+
+\begin{equation*}
+L : C^2[a,b] \to C[a,b]
+\end{equation*}
+
+be the second derivative operator.
+
+A basis for the null space of $L$ is
+
+\begin{equation*}
+\lbrace 1,x \rbrace
+\end{equation*}
+
+** TODO 3.4 [0/5]
+*** TODO 1.
+*** TODO 3.
+*** TODO 5.
+*** TODO 7.
+*** TODO 9.
+** TODO 3.5 [0/4]
+*** TODO 1.
+*** TODO 3.
+*** TODO 5.
+*** TODO 7.
