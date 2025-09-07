@@ -9,3 +9,5 @@ org-ltximg_*
 *.png
 
 .DS_Store
+
+Manifest.toml
